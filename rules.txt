@@ -1,0 +1,3 @@
+document what you changed when committing
+when committing with bug, add description to TODO.md
+when adding experimental function, create a branch and commit to there so main branch don't get messed up
