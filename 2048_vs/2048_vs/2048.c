@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-#include<stdio.h>
-#include<stdbool.h>
-#include"matrixManipulation.h"
-
-char checkState(int matrix[4][4]);
-=======
 #include <stdio.h>
 #include <stdbool.h>
->>>>>>> Stashed changes
+#include "matrixManipulation.h"
+
+char checkState(int matrix[4][4]);
 
 int main(void)
 {
