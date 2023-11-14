@@ -1,0 +1,6 @@
+- [ ] checkState function
+- [ ] moveUp/Down/Right/Left funciton
+- [ ] addNumber function
+- [ ] restartable
+- [ ] able to quit mid game
+- [ ] user interface
