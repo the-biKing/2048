@@ -1,5 +1,8 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include"matrixManipulation.h"
+
+char checkState(int matrix[4][4]);
 
 int main(void) {
 	int board[4][4];
