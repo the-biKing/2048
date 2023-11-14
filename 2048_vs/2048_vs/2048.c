@@ -6,7 +6,7 @@ char checkState(int matrix[4][4]);
 
 int main(void)
 {
-	int board[4][4];
+	int board[4][4],c;
 	bool gameContinue = true;
 	char playerInput;
 	for (int i = 0; i < 4; i++)
@@ -27,6 +27,7 @@ int main(void)
 			printf("\n");
 		}
 		scanf("%c", &playerInput);
+		while ((c = getchar()) != '\n' && c != EOF);
 		if (playerInput == 'w')
 		{
 			moveUp(board[4][4]);
