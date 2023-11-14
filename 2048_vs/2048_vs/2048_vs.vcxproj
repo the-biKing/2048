@@ -128,6 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2048.c" />
+    <ClCompile Include="matrixManipulation.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="matrixManipulation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
