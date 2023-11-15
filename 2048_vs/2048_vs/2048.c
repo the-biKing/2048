@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdbool.h>
+#include <time.h>
 #include "matrixManipulation.h"
 
 char checkState(int matrix[4][4]);
