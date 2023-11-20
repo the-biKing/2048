@@ -1,2 +1,16 @@
-﻿  matrixManipulation.c
-  2048_vs.vcxproj -> C:\Users\Josh\OneDrive\桌面\josh\計算機程式應用與實習專案\2048\2048_vs\x64\Debug\2048_vs.exe
+﻿  2048.c
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(62,19): warning C4047: '函式': 'int (*)[4]' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(62,19): warning C4024: 'moveUp': 型式和實質參數 1 不同的類型
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(66,21): warning C4047: '函式': 'int (*)[4]' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(66,21): warning C4024: 'moveLeft': 型式和實質參數 1 不同的類型
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(70,21): warning C4047: '函式': 'int (*)[4]' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(70,21): warning C4024: 'moveDown': 型式和實質參數 1 不同的類型
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(74,22): warning C4047: '函式': 'int (*)[4]' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(74,22): warning C4024: 'moveRight': 型式和實質參數 1 不同的類型
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(80,21): warning C4047: '函式': 'int (*)[4]' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(80,21): warning C4024: 'addNumber': 型式和實質參數 1 不同的類型
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(81,18): warning C4047: '!=': 'char (__cdecl *)(int (*)[4])' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(86,17): warning C4047: '==': 'char (__cdecl *)(int (*)[4])' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(90,17): warning C4047: '==': 'char (__cdecl *)(int (*)[4])' 與 'int' 間接取值的層級不同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\2048.c(100): warning C4716: 'checkState': 必須傳回值
+  2048_vs.vcxproj -> C:\Users\jesse\Documents\GitHub\2048\2048_vs\x64\Debug\2048_vs.exe

@@ -6,8 +6,35 @@
 
 char checkState(int matrix[4][4]);
 
+
+
 int main(void)
 {
+	//´ú¸Õmove¥Î
+	/*
+	int M[4][4];
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			M[i][j] = 2;
+		}
+	}
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			printf("%d ", M[i][j]);
+		}
+		printf("\n");
+	}
+	moveUp(M);
+	moveDown(M);
+	moveRight(M);
+	moveLeft(M);
+	for (int i = 0; i < 4; i++) {
+		for (int j = 0; j < 4; j++) {
+			printf("%d ", M[i][j]);
+		}
+		printf("\n");
+	}*/
+
 	int board[4][4],c;
 	bool gameContinue = true;
 	char playerInput;
@@ -64,7 +91,7 @@ int main(void)
 	{
 		printf("lose");
 	}
-
+	
 	return 0;
 }
 
