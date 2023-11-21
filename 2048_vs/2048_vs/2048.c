@@ -93,3 +93,4 @@ char checkState(int matrix[4][4])
 			}
 		}
 	}
+}
