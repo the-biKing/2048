@@ -21,9 +21,15 @@
     <ClCompile Include="matrixManipulation.c">
       <Filter>資源檔</Filter>
     </ClCompile>
+    <ClCompile Include="GPU.c">
+      <Filter>資源檔</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matrixManipulation.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="GPU.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
   </ItemGroup>

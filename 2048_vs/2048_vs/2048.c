@@ -19,6 +19,7 @@ int main(void)
 			board[i][j] = 0;
 		}
 	}
+	addNumber(board);
 	while (gameContinue)
 	{
 		system("cls");

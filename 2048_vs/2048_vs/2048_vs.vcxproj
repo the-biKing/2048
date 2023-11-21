@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="2048.c" />
+    <ClCompile Include="GPU.c" />
     <ClCompile Include="matrixManipulation.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GPU.h" />
     <ClInclude Include="matrixManipulation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

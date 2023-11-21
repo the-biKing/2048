@@ -1,4 +1,6 @@
 ﻿  2048.c
-C:\Users\ZZJKY\Desktop\2048\2048_vs\2048_vs\2048.c(24,3): warning C4013: 'system' 未定義; 假設 extern 傳回整數
-C:\Users\ZZJKY\Desktop\2048\2048_vs\2048_vs\2048.c(96): warning C4716: 'checkState': 必須傳回值
-  2048_vs.vcxproj -> C:\Users\ZZJKY\Desktop\2048\2048_vs\x64\Debug\2048_vs.exe
+C:\Users\Josh\OneDrive\桌面\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\2048.c(25,3): warning C4013: 'system' 未定義; 假設 extern 傳回整數
+  GPU.c
+  正在產生程式碼...
+C:\Users\Josh\OneDrive\桌面\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\2048.c(97): warning C4715: 'checkState': 不是所有控制路徑都傳回值
+  2048_vs.vcxproj -> C:\Users\Josh\OneDrive\桌面\josh\計算機程式應用與實習專案\2048\2048_vs\x64\Debug\2048_vs.exe
