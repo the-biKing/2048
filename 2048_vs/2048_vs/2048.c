@@ -10,7 +10,7 @@ char checkState(int matrix[4][4]);
 
 int main(void)
 {
-	//´ú¸Õmove¥Î
+	//ï¿½ï¿½ï¿½ï¿½moveï¿½ï¿½
 	/*
 	int M[4][4];
 	for (int i = 0; i < 4; i++) {
@@ -56,38 +56,38 @@ int main(void)
 			printf("\n");
 		}
 		scanf("%c", &playerInput);
-		while ((c = getchar()) != '\n' && c != EOF);
+		//while ((c = getchar()) != '\n' && c != EOF);
 		if (playerInput == 'w')
 		{
-			moveUp(board[4][4]);
+			moveUp(board);
 		}
 		else if (playerInput == 'a')
 		{
-			moveLeft(board[4][4]);
+			moveLeft(board);
 		}
 		else if (playerInput == 's')
 		{
-			moveDown(board[4][4]);
+			moveDown(board);
 		}
 		else if (playerInput == 'd')
 		{
-			moveRight(board[4][4]);
+			moveRight(board);
 		}
 		else
 		{
 			printf("Invalid input");
 		}
-		addNumber(board[4][4]);
-		if (checkState != 'c')
+		addNumber(board);
+		if (checkState(board) != 'c')
 		{
 			gameContinue = false;
 		}
 	}
-	if (checkState == 'w')
+	if (checkState(board) == 'w')
 	{
 		printf("win");
 	}
-	if (checkState == 'l')
+	if (checkState(board) == 'l')
 	{
 		printf("lose");
 	}
@@ -97,4 +97,5 @@ int main(void)
 
 char checkState(int matrix[4][4])
 {
+	return 'c';
 }

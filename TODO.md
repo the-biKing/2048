@@ -1,5 +1,5 @@
 - [ ] checkState function
-- [ ] moveUp/Down/Right/Left funciton
+- [ ] moveUp/Down/Right/Left function
 - [x] addNumber function
 - [ ] restartable
 - [ ] able to quit mid game

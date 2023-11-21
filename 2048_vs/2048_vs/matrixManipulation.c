@@ -12,14 +12,14 @@ void moveUp(int matrix[4][4]){
                 matrix[i + 1][j] = 0;
             }
         }
-        int countv = 0;//zero not++ to fill matrix upward 
+        int count_v = 0;//zero not++ to fill matrix upward 
         for (i = 0; i < 4; i++) {
             if (matrix[i][j] != 0) {
-                matrix[countv][j] = matrix[i][j];
-                if (countv != i) {
+                matrix[count_v][j] = matrix[i][j];
+                if (count_v != i) {
                     matrix[i][j] = 0;
                 }
-                countv++;
+                count_v++;
             }
         }
     }
@@ -32,14 +32,14 @@ void moveRight(int matrix[4][4]){
                 matrix[i][j-1] = 0;
             }
         }
-        int counth = 3;//zero not-- to fill matrix rightward 
+        int count_h = 3;//zero not-- to fill matrix rightward 
         for (j = 3; j >=0; j--) {
             if (matrix[i][j] != 0) {
-                matrix[i][counth] = matrix[i][j];
-                if (counth != j) {
+                matrix[i][count_h] = matrix[i][j];
+                if (count_h != j) {
                     matrix[i][j] = 0;
                 }
-                counth--;
+                count_h--;
             }
         }
     }
@@ -52,14 +52,14 @@ void moveLeft(int matrix[4][4]){
                 matrix[i][j + 1] = 0;
             }
         }
-        int counth = 0;//zero not++ to fill matrix leftward 
+        int count_h = 0;//zero not++ to fill matrix leftward 
         for (j = 0; j <4; j++) {
             if (matrix[i][j] != 0) {
-                matrix[i][counth] = matrix[i][j];
-                if (counth != j) {
+                matrix[i][count_h] = matrix[i][j];
+                if (count_h != j) {
                     matrix[i][j] = 0;
                 }
-                counth++;
+                count_h++;
             }
         }
     }
@@ -72,14 +72,14 @@ void moveDown(int matrix[4][4]){
                 matrix[i - 1][j] = 0;
             }
         }
-        int countv = 3;//zero not-- to fill matrix downward 
+        int count_v = 3;//zero not-- to fill matrix downward 
         for (i = 3; i >=0; i--) {
             if (matrix[i][j] != 0) {
-                matrix[countv][j] = matrix[i][j];
-                if (countv != i) {
+                matrix[count_v][j] = matrix[i][j];
+                if (count_v != i) {
                     matrix[i][j] = 0;
                 }
-                countv--;
+                count_v--;
             }
         }
     }
@@ -101,9 +101,9 @@ void addNumber(int matrix[4][4]){
     while(keepFinding){
         int i=rand()%4;
         int j=rand()%4;
-        int twoOrfour=rand()%10;
+        int two_four=rand()%10;
         if(matrix[i][j]==0){
-            if(twoOrfour<=7){
+            if(two_four<=7){
                 matrix[i][j]=2;
                 keepFinding=false;
             }
