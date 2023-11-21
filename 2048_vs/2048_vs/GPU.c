@@ -9,12 +9,18 @@
 
 static void gotoxy(int x, int y);
 
-void display(int matrix[4][4]){
-    for(int i=0;i<32;i++){
-        gotoxy(0,i);
-        printf("|");
+void display(int matrix[4][4])
+{
+    int j = 0;
+    while (j <= 84)
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            gotoxy(j, i);
+            printf("|");
+        }
+        j = j + 21;
     }
-
 }
 
 void gotoxy(int x, int y) {
