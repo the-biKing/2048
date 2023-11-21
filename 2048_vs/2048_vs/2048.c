@@ -3,15 +3,13 @@
 #include <stdbool.h>
 #include <time.h>
 #include "matrixManipulation.h"
-#include"GPU.h"
+#include "GPU.h"
 
 char checkState(int matrix[4][4]);
 
-
-
 int main(void)
 {
-	int board[4][4],c;
+	int board[4][4], c;
 	bool gameContinue = true;
 	char playerInput;
 	for (int i = 0; i < 4; i++)
@@ -33,7 +31,8 @@ int main(void)
 			printf("\n");
 		}
 		scanf("%c", &playerInput);
-		while ((c = getchar()) != '\n' && c != EOF);
+		while ((c = getchar()) != '\n' && c != EOF)
+			;
 		if (playerInput == 'w')
 		{
 			moveUp(board);
@@ -68,15 +67,22 @@ int main(void)
 	{
 		printf("lose");
 	}
-	
+
 	return 0;
 }
 
 char checkState(int matrix[4][4])
 {
-	return 'c';
-
-	//return c=game continue
-	//return w=win(reach 2048)
-	//return l=lose(can't move)
+	int i, j;
+	for (i = 0; i < 3; i++)
+	{
+		for (j = 0; j < 3; j++)
+		{
+			if (matrix[i][j] = 0)
+				return 'c'; // c=game continue
+			break;
+			else if (matrix[i][j] = 2048) return 'w'; // w=win (only when reach 2048)
+			else return 'l';						  // l=lose (no more space for movements)
+		}
+	}
 }
