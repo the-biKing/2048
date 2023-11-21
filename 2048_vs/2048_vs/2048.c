@@ -74,25 +74,21 @@ int main(void)
 
 char checkState(int matrix[4][4])
 {
-	return 'c';
-	/*int i, j;
+	int i, j;
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
 		{
-			if (matrix[i][j] = 0)
+			if (matrix[i][j] == 0 || matrix[i][j] == matrix[i][j + 1] || matrix[i][j] == matrix[i][j - 1] || matrix[i][j] == matrix[i + 1] || matrix[i][j] == matrix[i - 1][j])
 			{
 				return 'c'; // c=game continue
 				break;
 			}
-			else if (matrix[i][j] = 2048)
+			else if (matrix[i][j] == 2048)
 			{
 				return 'w'; // w=win (only when reach 2048)
 			}
-			else
-			{
-				return 'l'; // l=lose (no more space for movements)
-			}
 		}
-	}*/
+	}
+	return 'l';
 }
