@@ -1,4 +1,4 @@
-- [ ] checkState function
+- [x] checkState function
 - [ ] moveUp/Down/Right/Left function
 - [x] addNumber function
 - [ ] restartable
