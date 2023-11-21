@@ -73,7 +73,7 @@ int main(void)
 
 char checkState(int matrix[4][4])
 {
-	int i, j;
+	/*int i, j;
 	for (i = 0; i < 3; i++)
 	{
 		for (j = 0; j < 3; j++)
@@ -92,5 +92,5 @@ char checkState(int matrix[4][4])
 				return 'l'; // l=lose (no more space for movements)
 			}
 		}
-	}
+	}*/
 }
