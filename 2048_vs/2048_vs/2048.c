@@ -79,10 +79,17 @@ char checkState(int matrix[4][4])
 		for (j = 0; j < 3; j++)
 		{
 			if (matrix[i][j] = 0)
+			{
 				return 'c'; // c=game continue
-			break;
-			else if (matrix[i][j] = 2048) return 'w'; // w=win (only when reach 2048)
-			else return 'l';						  // l=lose (no more space for movements)
+				break;
+			}
+			else if (matrix[i][j] = 2048)
+			{
+				return 'w'; // w=win (only when reach 2048)
+			}
+			else
+			{
+				return 'l'; // l=lose (no more space for movements)
+			}
 		}
 	}
-}
