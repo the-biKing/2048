@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <time.h>
 #include "matrixManipulation.h"
+#include"GPU.h"
 
 char checkState(int matrix[4][4]);
 
@@ -10,31 +11,6 @@ char checkState(int matrix[4][4]);
 
 int main(void)
 {
-	//����move��
-	/*
-	int M[4][4];
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
-			M[i][j] = 2;
-		}
-	}
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
-			printf("%d ", M[i][j]);
-		}
-		printf("\n");
-	}
-	moveUp(M);
-	moveDown(M);
-	moveRight(M);
-	moveLeft(M);
-	for (int i = 0; i < 4; i++) {
-		for (int j = 0; j < 4; j++) {
-			printf("%d ", M[i][j]);
-		}
-		printf("\n");
-	}*/
-
 	int board[4][4],c;
 	bool gameContinue = true;
 	char playerInput;
@@ -47,6 +23,7 @@ int main(void)
 	}
 	while (gameContinue)
 	{
+		system("cls");
 		for (int i = 0; i < 4; i++)
 		{
 			for (int j = 0; j < 4; j++)
@@ -56,7 +33,7 @@ int main(void)
 			printf("\n");
 		}
 		scanf("%c", &playerInput);
-		//while ((c = getchar()) != '\n' && c != EOF);
+		while ((c = getchar()) != '\n' && c != EOF);
 		if (playerInput == 'w')
 		{
 			moveUp(board);
@@ -98,4 +75,8 @@ int main(void)
 char checkState(int matrix[4][4])
 {
 	return 'c';
+
+	//return c=game continue
+	//return w=win(reach 2048)
+	//return l=lose(can't move)
 }

@@ -1,3 +1,4 @@
+#pragma once
 #ifndef MATRIXMANIPULATION_H
 #define MATRIXMANIPULATION_H
 
