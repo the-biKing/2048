@@ -74,6 +74,7 @@ int main(void)
 
 char checkState(int matrix[4][4])
 {
+	return 'c';
 	/*int i, j;
 	for (i = 0; i < 3; i++)
 	{
