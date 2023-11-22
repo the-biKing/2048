@@ -23,14 +23,7 @@ int main(void)
 	while (gameContinue)
 	{
 		system("cls");
-		for (int i = 0; i < 4; i++)
-		{
-			for (int j = 0; j < 4; j++)
-			{
-				printf("%d", board[i][j]);
-			}
-			printf("\n");
-		}
+		display(board);
 		scanf("%c", &playerInput);
 		while ((c = getchar()) != '\n' && c != EOF)
 			;
@@ -75,20 +68,37 @@ int main(void)
 char checkState(int matrix[4][4])
 {
 	int i, j;
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < 4; i++)
 	{
-		for (j = 0; j < 3; j++)
+		for (j = 0; j < 4; j++)
 		{
-			if (matrix[i][j] == 0 || matrix[i][j] == matrix[i][j + 1] || matrix[i][j] == matrix[i][j - 1] || matrix[i][j] == matrix[i + 1] || matrix[i][j] == matrix[i - 1][j])
+			if (matrix[i][j] == 0)
 			{
-				return 'c'; // c=game continue
+				return 'c'; // c = game continue
 				break;
 			}
 			else if (matrix[i][j] == 2048)
 			{
-				return 'w'; // w=win (only when reach 2048)
+				return 'w'; // w = win (only when reach 2048)
+				break;
 			}
 		}
 	}
-	return 'l';
+
+	for (i = 0; i < 4; i++)
+	{
+		for (j = 0; j < 4; j++)
+		{
+			if (matrix[i][j] == matrix[i][j + 1] || matrix[i][j] == matrix[i + 1][j])
+			{
+				return 'c'; // c=game continue
+				break;
+			}
+			else
+			{
+				return 'l'; // l=lose
+				break;
+			}
+		}
+	}
 }
