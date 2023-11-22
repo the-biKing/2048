@@ -23,14 +23,7 @@ int main(void)
 	while (gameContinue)
 	{
 		system("cls");
-		for (int i = 0; i < 4; i++)
-		{
-			for (int j = 0; j < 4; j++)
-			{
-				printf("%d", board[i][j]);
-			}
-			printf("\n");
-		}
+		display(board);
 		scanf("%c", &playerInput);
 		while ((c = getchar()) != '\n' && c != EOF)
 			;
