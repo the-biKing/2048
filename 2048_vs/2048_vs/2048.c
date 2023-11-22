@@ -55,10 +55,12 @@ int main(void)
 	}
 	if (checkState(board) == 'w')
 	{
+		display(board);
 		printf("win");
 	}
 	if (checkState(board) == 'l')
 	{
+		display(board);
 		printf("lose");
 	}
 
