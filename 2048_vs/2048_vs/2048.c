@@ -7,9 +7,12 @@
 
 char checkState(int matrix[4][4]);
 
+extern int merge;
+
 int main(void)
 {
 	int board[4][4], c;
+	int count=0;
 	bool gameContinue = true;
 	char playerInput;
 	for (int i = 0; i < 4; i++)
@@ -29,19 +32,51 @@ int main(void)
 			;
 		if (playerInput == 'w')
 		{
-			moveUp(board);
+			count = 0;
+			merge = 0;
+			while (merge == 0) {
+				moveUp(board);
+				count++;
+				if (count == 3) {
+					break;
+				}
+			}
 		}
 		else if (playerInput == 'a')
 		{
-			moveLeft(board);
+			count = 0;
+			merge = 0;
+			while (merge == 0) {
+				moveLeft(board);
+				count++;
+				if (count == 3) {
+					break;
+				}
+			}
 		}
 		else if (playerInput == 's')
 		{
-			moveDown(board);
+			count = 0;
+			merge = 0;
+			while (merge == 0) {
+				moveDown(board);
+				count++;
+				if (count == 3) {
+					break;
+				}
+			}
 		}
 		else if (playerInput == 'd')
 		{
-			moveRight(board);
+			count = 0;
+			merge = 0;
+			while (merge == 0) {
+				moveRight(board);
+				count++;
+				if (count == 3) {
+					break;
+				}
+			}
 		}
 		else
 		{

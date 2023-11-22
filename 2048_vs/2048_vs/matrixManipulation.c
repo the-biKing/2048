@@ -4,12 +4,16 @@
 #include<stdbool.h>
 
 int i, j;
+
+int merge;
+
 void moveUp(int matrix[4][4]){
     for (j = 0; j < 4; j++) {
         for (i = 0; i < 3; i++) {
-            if (matrix[i][j] == matrix[i + 1][j]) {
+            if (matrix[i][j] == matrix[i + 1][j] && matrix[i][j]!=0) {
                 matrix[i][j] *= 2;
                 matrix[i + 1][j] = 0;
+                merge++;
             }
         }
         int count_v = 0;//zero not++ to fill matrix upward 
@@ -27,9 +31,10 @@ void moveUp(int matrix[4][4]){
 void moveRight(int matrix[4][4]){
     for (i = 0; i < 4; i++) {
         for (j = 3; j >0; j--) {
-            if (matrix[i][j] == matrix[i][j-1]) {
+            if (matrix[i][j] == matrix[i][j-1] && matrix[i][j] != 0) {
                 matrix[i][j] *= 2;
                 matrix[i][j-1] = 0;
+                merge++;
             }
         }
         int count_h = 3;//zero not-- to fill matrix rightward 
@@ -47,9 +52,10 @@ void moveRight(int matrix[4][4]){
 void moveLeft(int matrix[4][4]){
     for (i = 0; i < 4; i++) {
         for (j = 0; j <3; j++) {
-            if (matrix[i][j] == matrix[i][j + 1]) {
+            if (matrix[i][j] == matrix[i][j + 1] && matrix[i][j] != 0) {
                 matrix[i][j] *= 2;
                 matrix[i][j + 1] = 0;
+                merge++;
             }
         }
         int count_h = 0;//zero not++ to fill matrix leftward 
@@ -67,9 +73,10 @@ void moveLeft(int matrix[4][4]){
 void moveDown(int matrix[4][4]){
     for (j = 0; j < 4; j++) {
         for (i = 3; i >0; i--) {
-            if (matrix[i][j] == matrix[i - 1][j]) {
+            if (matrix[i][j] == matrix[i - 1][j] && matrix[i][j] != 0) {
                 matrix[i][j] *= 2;
                 matrix[i - 1][j] = 0;
+                merge++;
             }
         }
         int count_v = 3;//zero not-- to fill matrix downward 
