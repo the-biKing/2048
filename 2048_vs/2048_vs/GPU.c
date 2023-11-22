@@ -140,19 +140,6 @@ void display(int matrix[4][4])
     gotoxy(0, 33);
     return 0;
 }
-void p11(int x)
-{
-    if (x == 0)
-    {
-        return;
-    }
-    int Number = log2(x) - 1;
-    for (int i = 0; i < 7; i++)
-    {
-        gotoxy(3, i + 1);
-        printf("%s", number[Number][i]);
-    }
-}
 
 void gotoxy(int x, int y)
 {
