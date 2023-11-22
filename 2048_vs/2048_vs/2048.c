@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <time.h>
+#include<conio.h>
+#include<Windows.h>
 #include "matrixManipulation.h"
 #include "GPU.h"
 
@@ -12,7 +14,7 @@ extern int merge;
 int main(void)
 {
 	int board[4][4], c;
-	int count=0;
+	int count = 0;
 	bool gameContinue = true;
 	char playerInput;
 	for (int i = 0; i < 4; i++)
@@ -27,9 +29,32 @@ int main(void)
 	{
 		system("cls");
 		display(board);
-		scanf("%c", &playerInput);
-		while ((c = getchar()) != '\n' && c != EOF)
-			;
+		while (1) {
+			if (_kbhit()) {
+				int key = _getch(); // Get the key code
+				if (key == 224) { // Check for arrow keys
+					key = _getch(); // Second _getch() to capture arrow key codes
+					switch (key) {
+					case 72: // Up arrow
+						playerInput = 'w';
+						break;
+					case 75: // Left arrow
+						playerInput = 'a';
+						break;
+					case 77: // Right arrow
+						playerInput = 'd';
+						break;
+					case 80: // Down arrow
+						playerInput = 's';
+						break;
+					default:
+						break;
+					}
+					break; // Break out of the while loop after processing key input
+				}
+			}
+		}
+
 		if (playerInput == 'w')
 		{
 			count = 0;
