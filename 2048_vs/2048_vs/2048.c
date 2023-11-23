@@ -16,7 +16,7 @@ char state;
 int main(void)
 {
 	int board[4][4], c;
-	int count = 0;
+	int count = 0,score=0;
 	bool gameContinue = true;
 	char playerInput;
 	for (int i = 0; i < 4; i++)
@@ -125,8 +125,15 @@ int main(void)
 	}
 	if (state == 'l')
 	{
+		
 		display(board);
-		printf("lose");
+		printf("lose\n");
+		for(int i=0;i<4;i++){
+			for(int j=0;j<4;j++){
+				score=score+board[i][j]
+			}
+		}
+		printf("%d",score);
 	}
 
 	return 0;

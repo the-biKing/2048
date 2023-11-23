@@ -183,11 +183,5 @@ void goto_xy(int x, int y)
 }
 void colorPrint(const char *text, int red, int green, int blue)
 {
-    if (red <= 0 || red >= 255 || green <= 0 || green >= 255 || blue <= 0 || blue >= 255)
-    {
-        // printf("Invalid color values. Please use values between 0 and 255.\n");
-        return;
-    }
-
     printf("\x1b[38;2;%d;%d;%dm%s\x1b[0m", red, green, blue, text);
 }
