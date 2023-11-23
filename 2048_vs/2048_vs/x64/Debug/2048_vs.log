@@ -1,4 +1,24 @@
-﻿  2048.c
-C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\2048.c(16,19): warning C4101: 'c': 未參考的區域變數
-C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\2048.c(166): warning C4715: 'checkState': 不是所有控制路徑都傳回值
-  2048_vs.vcxproj -> C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\x64\Debug\2048_vs.exe
+﻿  GPU.c
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(113,11): error C2466: 無法配置常數大小為 0 的陣列，常數必須為大於 0 的整數
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(113,1): error C2371: 'cNumbers': 重複定義; 基本類型不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(114,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(115,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(116,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(117,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(118,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(119,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(120,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(121,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(122,1): error C2369: 'cNumbers': 重複定義; 註標不相同
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(112,14): message : 請參閱 'cNumbers' 的宣告
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(175,13): warning C4098: 'display': 'void' 函式正在傳回值
+C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\GPU.c(163,45): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失

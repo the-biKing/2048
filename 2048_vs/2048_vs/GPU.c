@@ -165,7 +165,7 @@ void display(int matrix[4][4])
             {
                 goto_xy(3 + 21 * h, (i + 1) + 8 * v);
                 char string[8];
-                strcpy(string,number[Number][i])
+                strcpy(string, number[Number][i]);
                 colorPrint(string,cNumbers[Number].red,cNumbers[Number].green,cNumbers[Number].blue);
             }
         }
