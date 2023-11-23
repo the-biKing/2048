@@ -110,16 +110,7 @@ struct color eight = {214, 65, 185};
 struct color nine =  {170, 91, 220};
 
 struct color cNumbers[10];
-cNumbers[0]=zero;
-cNumbers[1]=one;
-cNumbers[2]=two;
-cNumbers[3]=three;
-cNumbers[4]=four;
-cNumbers[5]=five;
-cNumbers[6]=six;
-cNumbers[7]=seven;
-cNumbers[8]=eight;
-cNumbers[9]=nine;
+
 
 
 static void goto_xy(int x, int y);
@@ -127,6 +118,16 @@ static void colorPrint(const char *text, int red, int green, int blue);
 
 void display(int matrix[4][4])
 {
+    cNumbers[0]=zero;
+    cNumbers[1]=one;
+    cNumbers[2]=two;
+    cNumbers[3]=three;
+    cNumbers[4]=four;
+    cNumbers[5]=five;
+    cNumbers[6]=six;
+    cNumbers[7]=seven;
+    cNumbers[8]=eight;
+    cNumbers[9]=nine;
     system("cls");
     int j = 0;
     while (j <= 84)
