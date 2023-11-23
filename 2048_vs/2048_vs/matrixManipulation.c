@@ -101,7 +101,7 @@ void moveDown(int matrix[4][4]){
         }
     }
 }
-void addNumber(int matrix[4][4]){
+void addNumber(int matrix[4][4],int *x,int *y){
     srand(time(NULL));
     bool keepFinding=true;
     int countZero=0;
@@ -122,10 +122,14 @@ void addNumber(int matrix[4][4]){
         if(matrix[i][j]==0){
             if(two_four<=7){
                 matrix[i][j]=2;
+                *x = i;
+                *y = j;
                 keepFinding=false;
             }
             else{
                 matrix[i][j]=4;
+                *x = i;
+                *y = j;
                 keepFinding=false;
             }
         }

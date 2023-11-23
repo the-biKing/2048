@@ -8,6 +8,8 @@
 #include "GPU.h"
 
 char checkState(int matrix[4][4]);
+void colorPrint(const char* text, int red, int green, int blue);
+void goto_xy(int x, int y);
 
 extern int merge;
 extern int movespace;
@@ -15,9 +17,11 @@ char state;
 
 int main(void)
 {
-	int board[4][4], c;
+	int horizontalNew, verticleNew;
+	int board[4][4];
 	int count = 0,score=0;
 	bool gameContinue = true;
+	bool add = true;
 	char playerInput;
 	for (int i = 0; i < 4; i++)
 	{
@@ -26,11 +30,11 @@ int main(void)
 			board[i][j] = 0;
 		}
 	}
-	addNumber(board);
+	addNumber(board,&horizontalNew,&verticleNew);
 	while (gameContinue)
 	{
 		system("cls");
-		display(board);
+		display(board,horizontalNew,verticleNew,add);
 		while (1) {
 			if (_kbhit()) {
 				int key = _getch(); // Get the key code
@@ -110,7 +114,86 @@ int main(void)
 			printf("Invalid input");
 		}
 		if (movespace != 0) {
-			addNumber(board);
+			addNumber(board,&horizontalNew,&verticleNew);
+			add = true;
+		}
+		else {
+			int j = 0;
+			while (j <= 84)
+			{
+				for (int i = 0; i < 32; i++)
+				{
+					goto_xy(j, i);
+					colorPrint("|",240,30,30);
+				}
+				j = j + 21;
+			}
+			j = 0;
+			while (j < 39)
+			{
+				for (int i = 1; i < 84; i++)
+				{
+					goto_xy(i, j);
+					if (i % 21 == 0)
+					{
+						continue;
+					}
+					colorPrint("-", 240, 30, 30);
+				}
+				j = j + 8;
+			}
+			Sleep(200);
+			j = 0;
+			while (j <= 84)
+			{
+				for (int i = 0; i < 32; i++)
+				{
+					goto_xy(j, i);
+					colorPrint("|", 240, 240, 240);
+				}
+				j = j + 21;
+			}
+			j = 0;
+			while (j < 39)
+			{
+				for (int i = 1; i < 84; i++)
+				{
+					goto_xy(i, j);
+					if (i % 21 == 0)
+					{
+						continue;
+					}
+					colorPrint("-", 240, 240, 240);
+				}
+				j = j + 8;
+			}
+			Sleep(100);
+			j = 0;
+			while (j <= 84)
+			{
+				for (int i = 0; i < 32; i++)
+				{
+					goto_xy(j, i);
+					colorPrint("|", 240, 30, 30);
+				}
+				j = j + 21;
+			}
+			j = 0;
+			while (j < 39)
+			{
+				for (int i = 1; i < 84; i++)
+				{
+					goto_xy(i, j);
+					if (i % 21 == 0)
+					{
+						continue;
+					}
+					colorPrint("-", 240, 30, 30);
+				}
+				j = j + 8;
+			}
+			Sleep(200);
+			add = false;
 		}
 		state=checkState(board);
 		if (state != 'c')
@@ -120,20 +203,20 @@ int main(void)
 	}
 	if (state == 'w')
 	{
-		display(board);
+		display(board,horizontalNew,verticleNew,false);
 		printf("win");
 	}
 	if (state == 'l')
 	{
 		
-		display(board);
+		display(board,horizontalNew,verticleNew,false);
 		printf("lose\n");
 		for(int i=0;i<4;i++){
 			for(int j=0;j<4;j++){
-				score=score+board[i][j]
+				score = score + board[i][j];
 			}
 		}
-		printf("%d",score);
+		printf("your score: %d",score);
 	}
 
 	return 0;
@@ -171,4 +254,13 @@ char checkState(int matrix[4][4])
 		}
 	}
 	return 'l'; // l=lose
+}
+void colorPrint(const char* text, int red, int green, int blue)
+{
+	printf("\x1b[38;2;%d;%d;%dm%s\x1b[0m", red, green, blue, text);
+}
+void goto_xy(int x, int y)
+{
+	COORD pos = { x, y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }

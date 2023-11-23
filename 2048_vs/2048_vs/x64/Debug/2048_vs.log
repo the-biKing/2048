@@ -1,4 +1,2 @@
-﻿  matrixManipulation.c
-C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\matrixManipulation.c(105,5): warning C4013: 'srand' 未定義; 假設 extern 傳回整數
-C:\Users\jesse\Documents\GitHub\2048\2048_vs\2048_vs\matrixManipulation.c(119,15): warning C4013: 'rand' 未定義; 假設 extern 傳回整數
-  2048_vs.vcxproj -> C:\Users\jesse\Documents\GitHub\2048\2048_vs\x64\Debug\2048_vs.exe
+﻿  2048.c
+  2048_vs.vcxproj -> C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\x64\Debug\2048_vs.exe
