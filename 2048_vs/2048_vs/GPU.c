@@ -188,5 +188,5 @@ void colorPrint(const char *text, int red, int green, int blue)
         return;
     }
 
-    printf("\x1b[38;2;%d;%d;%dm%s\x1b[0m\n", red, green, blue, text);
+    printf("\x1b[38;2;%d;%d;%dm%s\x1b[0m", red, green, blue, text);
 }
