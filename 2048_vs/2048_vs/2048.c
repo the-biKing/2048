@@ -10,6 +10,7 @@
 char checkState(int matrix[4][4]);
 
 extern int merge;
+char state;
 
 int main(void)
 {
@@ -108,17 +109,18 @@ int main(void)
 			printf("Invalid input");
 		}
 		addNumber(board);
-		if (checkState(board) != 'c')
+		state=checkState(board);
+		if (state != 'c')
 		{
 			gameContinue = false;
 		}
 	}
-	if (checkState(board) == 'w')
+	if (state == 'w')
 	{
 		display(board);
 		printf("win");
 	}
-	if (checkState(board) == 'l')
+	if (state == 'l')
 	{
 		display(board);
 		printf("lose");
@@ -156,11 +158,7 @@ char checkState(int matrix[4][4])
 				return 'c'; // c=game continue
 				break;
 			}
-			else
-			{
-				return 'l'; // l=lose
-				break;
-			}
 		}
 	}
+	return 'l'; // l=lose
 }

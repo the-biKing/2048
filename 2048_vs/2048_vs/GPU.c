@@ -91,7 +91,39 @@ char *n9[7] = {n9_0, n9_1, n9_2, n9_3, n9_4, n9_5, n9_6};
 
 char **number[10] = {n0, n1, n2, n3, n4, n5, n6, n7, n8, n9};
 
-static void gotoxy(int x, int y);
+struct color
+{
+    int red;
+    int green;
+    int blue;
+};
+
+struct color zero =  {214, 194, 167};
+struct color one =   {219, 178, 128};
+struct color two =   {219, 158, 75};
+struct color three = {224, 134, 19};
+struct color four =  {224, 97, 0};
+struct color five =  {224, 70, 0};
+struct color six =   {220, 22, 1};
+struct color seven = {219, 35, 86};
+struct color eight = {214, 65, 185};
+struct color nine =  {170, 91, 220};
+
+struct color cNumbers[10];
+cNumbers[0]=zero;
+cNumbers[1]=one;
+cNumbers[2]=two;
+cNumbers[3]=three;
+cNumbers[4]=four;
+cNumbers[5]=five;
+cNumbers[6]=six;
+cNumbers[7]=seven;
+cNumbers[8]=eight;
+cNumbers[9]=nine;
+
+
+static void goto_xy(int x, int y);
+static void colorPrint(const char *text, int red, int green, int blue);
 
 void display(int matrix[4][4])
 {
@@ -101,7 +133,7 @@ void display(int matrix[4][4])
     {
         for (int i = 0; i < 32; i++)
         {
-            gotoxy(j, i);
+            goto_xy(j, i);
             printf("|");
         }
         j = j + 21;
@@ -111,7 +143,7 @@ void display(int matrix[4][4])
     {
         for (int i = 1; i < 84; i++)
         {
-            gotoxy(i, j);
+            goto_xy(i, j);
             if (i % 21 == 0)
             {
                 continue;
@@ -131,18 +163,30 @@ void display(int matrix[4][4])
             int Number = log2(matrix[v][h]) - 1;
             for (int i = 0; i < 7; i++)
             {
-                gotoxy(3+21*h, (i + 1)+8*v);
-                printf("%s", number[Number][i]);
+                goto_xy(3 + 21 * h, (i + 1) + 8 * v);
+                char string[8];
+                strcpy(string,number[Number][i])
+                colorPrint(string,cNumbers[Number].red,cNumbers[Number].green,cNumbers[Number].blue);
             }
         }
     }
 
-    gotoxy(0, 33);
+    goto_xy(0, 33);
     return 0;
 }
 
-void gotoxy(int x, int y)
+void goto_xy(int x, int y)
 {
     COORD pos = {x, y};
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+void colorPrint(const char *text, int red, int green, int blue)
+{
+    if (red <= 0 || red >= 255 || green <= 0 || green >= 255 || blue <= 0 || blue >= 255)
+    {
+        // printf("Invalid color values. Please use values between 0 and 255.\n");
+        return;
+    }
+
+    printf("\x1b[38;2;%d;%d;%dm%s\x1b[0m\n", red, green, blue, text);
 }
