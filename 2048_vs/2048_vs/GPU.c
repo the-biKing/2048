@@ -102,8 +102,8 @@ struct color zero =  {214, 194, 167};
 struct color one =   {219, 178, 128};
 struct color two =   {219, 158, 75};
 struct color three = {224, 134, 19};
-struct color four =  {224, 97, 0};
-struct color five =  {224, 70, 0};
+struct color four =  {224, 97, 1};
+struct color five =  {224, 70, 1};
 struct color six =   {220, 22, 1};
 struct color seven = {219, 35, 86};
 struct color eight = {214, 65, 185};
@@ -165,7 +165,7 @@ void display(int matrix[4][4])
             for (int i = 0; i < 7; i++)
             {
                 goto_xy(3 + 21 * h, (i + 1) + 8 * v);
-                char string[8];
+                char string[20];
                 strcpy(string, number[Number][i]);
                 colorPrint(string,cNumbers[Number].red,cNumbers[Number].green,cNumbers[Number].blue);
             }

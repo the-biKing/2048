@@ -7,6 +7,8 @@ int i, j;
 
 int merge;
 
+int movespace;
+
 void moveUp(int matrix[4][4]){
     for (j = 0; j < 4; j++) {
         for (i = 0; i < 3; i++) {
@@ -14,6 +16,7 @@ void moveUp(int matrix[4][4]){
                 matrix[i][j] *= 2;
                 matrix[i + 1][j] = 0;
                 merge++;
+                movespace++;
             }
         }
         int count_v = 0;//zero not++ to fill matrix upward 
@@ -22,6 +25,7 @@ void moveUp(int matrix[4][4]){
                 matrix[count_v][j] = matrix[i][j];
                 if (count_v != i) {
                     matrix[i][j] = 0;
+                    movespace++;
                 }
                 count_v++;
             }
@@ -35,6 +39,7 @@ void moveRight(int matrix[4][4]){
                 matrix[i][j] *= 2;
                 matrix[i][j-1] = 0;
                 merge++;
+                movespace++;
             }
         }
         int count_h = 3;//zero not-- to fill matrix rightward 
@@ -43,6 +48,7 @@ void moveRight(int matrix[4][4]){
                 matrix[i][count_h] = matrix[i][j];
                 if (count_h != j) {
                     matrix[i][j] = 0;
+                    movespace++;
                 }
                 count_h--;
             }
@@ -56,6 +62,7 @@ void moveLeft(int matrix[4][4]){
                 matrix[i][j] *= 2;
                 matrix[i][j + 1] = 0;
                 merge++;
+                movespace++;
             }
         }
         int count_h = 0;//zero not++ to fill matrix leftward 
@@ -64,6 +71,7 @@ void moveLeft(int matrix[4][4]){
                 matrix[i][count_h] = matrix[i][j];
                 if (count_h != j) {
                     matrix[i][j] = 0;
+                    movespace++;
                 }
                 count_h++;
             }
@@ -77,6 +85,7 @@ void moveDown(int matrix[4][4]){
                 matrix[i][j] *= 2;
                 matrix[i - 1][j] = 0;
                 merge++;
+                movespace++;
             }
         }
         int count_v = 3;//zero not-- to fill matrix downward 
@@ -85,6 +94,7 @@ void moveDown(int matrix[4][4]){
                 matrix[count_v][j] = matrix[i][j];
                 if (count_v != i) {
                     matrix[i][j] = 0;
+                    movespace++;
                 }
                 count_v--;
             }

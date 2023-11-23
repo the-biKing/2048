@@ -10,6 +10,7 @@
 char checkState(int matrix[4][4]);
 
 extern int merge;
+extern int movespace;
 char state;
 
 int main(void)
@@ -55,7 +56,7 @@ int main(void)
 				}
 			}
 		}
-
+		movespace = 0;
 		if (playerInput == 'w')
 		{
 			count = 0;
@@ -108,7 +109,9 @@ int main(void)
 		{
 			printf("Invalid input");
 		}
-		addNumber(board);
+		if (movespace != 0) {
+			addNumber(board);
+		}
 		state=checkState(board);
 		if (state != 'c')
 		{
@@ -149,9 +152,9 @@ char checkState(int matrix[4][4])
 		}
 	}
 
-	for (i = 0; i < 4; i++)
+	for (i = 0; i < 3; i++)
 	{
-		for (j = 0; j < 4; j++)
+		for (j = 0; j < 3; j++)
 		{
 			if (matrix[i][j] == matrix[i][j + 1] || matrix[i][j] == matrix[i + 1][j])
 			{
