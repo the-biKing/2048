@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{e9f2a243-2de8-4150-bdfc-d488819defec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="2048.c">
@@ -32,5 +35,16 @@
     <ClInclude Include="GPU.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="accessDenied.wav">
+      <Filter>Audio</Filter>
+    </Media>
+    <Media Include="din.wav">
+      <Filter>Audio</Filter>
+    </Media>
+    <Media Include="levelUp.wav">
+      <Filter>Audio</Filter>
+    </Media>
   </ItemGroup>
 </Project>

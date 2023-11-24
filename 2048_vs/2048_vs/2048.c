@@ -4,9 +4,10 @@
 #include <time.h>
 #include<conio.h>
 #include<Windows.h>
+#include<mmsystem.h>
 #include "matrixManipulation.h"
 #include "GPU.h"
-
+#pragma comment(lib,"winmm.lib")
 char checkState(int matrix[4][4]);
 void colorPrint(const char* text, int red, int green, int blue);
 void goto_xy(int x, int y);
@@ -17,11 +18,13 @@ char state;
 
 int main(void)
 {
+	int maxNumber = 2;
 	int horizontalNew, verticleNew;
 	int board[4][4];
 	int count = 0,score=0;
 	bool gameContinue = true;
 	bool add = true;
+	bool playDin = true;
 	char playerInput;
 	for (int i = 0; i < 4; i++)
 	{
@@ -114,10 +117,26 @@ int main(void)
 			printf("Invalid input");
 		}
 		if (movespace != 0) {
+			for (int i = 0;i < 4;i++) {
+				for (int j = 0;j < 4;j++) {
+					if (board[i][j] > maxNumber) {
+						maxNumber = board[i][j];
+						PlaySound(TEXT("levelUp.wav"), NULL, SND_FILENAME | SND_ASYNC);
+						playDin = false;
+					}
+					
+				}
+			}
+			if (playDin&&merge>0) {
+				PlaySound(TEXT("din.wav"), NULL, SND_FILENAME | SND_ASYNC);
+			}
+			playDin = true;
+			
 			addNumber(board,&horizontalNew,&verticleNew);
 			add = true;
 		}
 		else {
+			PlaySound(TEXT("accessDenied.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			int j = 0;
 			while (j <= 84)
 			{

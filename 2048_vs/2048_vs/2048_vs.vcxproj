@@ -135,6 +135,11 @@
     <ClInclude Include="GPU.h" />
     <ClInclude Include="matrixManipulation.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="accessDenied.wav" />
+    <Media Include="din.wav" />
+    <Media Include="levelUp.wav" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

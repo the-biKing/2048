@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<time.h>
 #include<stdbool.h>
+#include<math.h>
 
 int i, j;
 
@@ -102,6 +103,14 @@ void moveDown(int matrix[4][4]){
     }
 }
 void addNumber(int matrix[4][4],int *x,int *y){
+    int maxNumber=2;
+    for (int i = 0;i < 4;i++) {
+        for (int j = 0;j < 4;j++) {
+            if (matrix[i][j] >=maxNumber) {
+                maxNumber = matrix[i][j];
+            }
+        }
+    }
     srand(time(NULL));
     bool keepFinding=true;
     int countZero=0;
@@ -119,8 +128,9 @@ void addNumber(int matrix[4][4],int *x,int *y){
         int i=rand()%4;
         int j=rand()%4;
         int two_four=rand()%10;
+        int maxlog = log2(maxNumber) - 1;
         if(matrix[i][j]==0){
-            if(two_four<=7){
+            if(two_four<=9-(maxlog/2)){
                 matrix[i][j]=2;
                 *x = i;
                 *y = j;

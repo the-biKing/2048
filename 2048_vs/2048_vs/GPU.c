@@ -176,7 +176,7 @@ void display(int matrix[4][4], int x, int y, bool addnumber)
 			for (int h = 0; h < 4; h++) {
 				if (v == x && h == y) {
 					int Number = log2(matrix[v][h]) - 1;
-					for (int r = 0, g = 0, b = 0;r < cNumbers[Number].red && g < cNumbers[Number].green && b < cNumbers[Number].blue;r++, g++, b++) {
+					for (int r = 0, g = 0, b = 0;r < cNumbers[Number].red && g < cNumbers[Number].green && b < cNumbers[Number].blue;r+=3, g+=3, b+=3) {
 						for (int i = 0; i < 7; i++)
 						{
 							goto_xy(3 + 21 * h, (i + 1) + 8 * v);
@@ -184,10 +184,7 @@ void display(int matrix[4][4], int x, int y, bool addnumber)
 							strcpy(string, number[Number][i]);
 							colorPrint(string, r, g, b);
 						}
-						int dummy = 0;
-							while (dummy < 2147483) {
-								dummy++;
-							}
+						Sleep(1);
 					}
 					for (int i = 0; i < 7; i++)
 					{
