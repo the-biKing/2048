@@ -128,7 +128,6 @@ void display(int matrix[4][4], int x, int y, bool addnumber)
 	cNumbers[7] = seven;
 	cNumbers[8] = eight;
 	cNumbers[9] = nine;
-	system("cls");
 	int j = 0;
 	while (j <= 84)
 	{
@@ -176,13 +175,16 @@ void display(int matrix[4][4], int x, int y, bool addnumber)
 			for (int h = 0; h < 4; h++) {
 				if (v == x && h == y) {
 					int Number = log2(matrix[v][h]) - 1;
-					for (int r = 0, g = 0, b = 0;r < cNumbers[Number].red && g < cNumbers[Number].green && b < cNumbers[Number].blue;r+=3, g+=3, b+=3) {
+					float redStep=(float)cNumbers[Number].red/50;
+					float greenStep=(float)cNumbers[Number].green / 50;
+					float blueStep=(float)cNumbers[Number].blue / 50;
+					for (float r = 0.0, g = 0.0, b = 0.0;r < cNumbers[Number].red && g < cNumbers[Number].green && b < cNumbers[Number].blue;r+=redStep, g+=greenStep, b+=blueStep) {
 						for (int i = 0; i < 7; i++)
 						{
 							goto_xy(3 + 21 * h, (i + 1) + 8 * v);
 							char string[20];
 							strcpy(string, number[Number][i]);
-							colorPrint(string, r, g, b);
+							colorPrint(string, ceil(r), ceil(g), ceil(b));
 						}
 						Sleep(1);
 					}

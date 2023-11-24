@@ -1,7 +1,8 @@
-﻿  2048.c
-  matrixManipulation.c
-C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\matrixManipulation.c(114,5): warning C4013: 'srand' 未定義; 假設 extern 傳回整數
-C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\matrixManipulation.c(128,15): warning C4013: 'rand' 未定義; 假設 extern 傳回整數
-C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\matrixManipulation.c(131,38): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
-  正在產生程式碼...
+﻿  GPU.c
+C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\GPU.c(187,27): warning C4244: '函式': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\GPU.c(187,36): warning C4244: '函式': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\GPU.c(187,45): warning C4244: '函式': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\GPU.c(203,10): warning C4098: 'display': 'void' 函式正在傳回值
+C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\GPU.c(163,36): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\2048_vs\GPU.c(177,38): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
   2048_vs.vcxproj -> C:\Users\Josh\Desktop\josh\計算機程式應用與實習專案\2048\2048_vs\x64\Debug\2048_vs.exe

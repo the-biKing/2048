@@ -104,26 +104,22 @@ void moveDown(int matrix[4][4]){
 }
 void addNumber(int matrix[4][4],int *x,int *y){
     int maxNumber=2;
-    for (int i = 0;i < 4;i++) {
-        for (int j = 0;j < 4;j++) {
-            if (matrix[i][j] >=maxNumber) {
+    srand(time(NULL));
+    bool keepFinding=true;
+    //int countZero=0;
+    for(int i=0;i<4;i++){
+        for(int j=0;j<4;j++){
+            /*if(matrix[i][j]==0){
+                countZero++;
+            }*/
+            if (matrix[i][j] >= maxNumber) {
                 maxNumber = matrix[i][j];
             }
         }
     }
-    srand(time(NULL));
-    bool keepFinding=true;
-    int countZero=0;
-    for(int i=0;i<4;i++){
-        for(int j=0;j<4;j++){
-            if(matrix[i][j]==0){
-                countZero++;
-            }
-        }
-    }
-    if(countZero==0){
+ /*   if(countZero==0){
         keepFinding=false;
-    }
+    }*/
     while(keepFinding){
         int i=rand()%4;
         int j=rand()%4;
