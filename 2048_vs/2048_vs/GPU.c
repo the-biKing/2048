@@ -6,6 +6,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include<conio.h>
 #include <math.h>
 
 char n0_0[20] = "################";
@@ -187,6 +188,9 @@ void display(int matrix[4][4], int x, int y, bool addnumber)
 							colorPrint(string, ceil(r), ceil(g), ceil(b));
 						}
 						Sleep(1);
+                        if(_kbhit()){
+                            break;
+                        }
 					}
 					for (int i = 0; i < 7; i++)
 					{
