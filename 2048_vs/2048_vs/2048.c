@@ -26,6 +26,13 @@ int main(void)
 	bool add = true;
 	bool playDin = true;
 	char playerInput;
+START:
+	gameContinue = true;
+	add = true;
+	playDin = true;
+	count = 0;
+	score = 0;
+	maxNumber = 2;
 	for (int i = 0; i < 4; i++)
 	{
 		for (int j = 0; j < 4; j++)
@@ -235,10 +242,30 @@ int main(void)
 				score = score + board[i][j];
 			}
 		}
-		printf("your score: %d",score);
+		printf("your score: %d\n",score);
 	}
 
-	return 0;
+
+	printf("Press any key to continue...\n");
+	while (!_kbhit()) {}
+	char keyNow;
+	system("cls");
+	printf("Press 'y' to play again or 'q' to quit\n");
+
+	// Input handling
+	while (1) {
+		if (_kbhit()) {
+			keyNow = _getch();
+			if (keyNow == 'q') {
+				exit(0);
+			}
+			else if (keyNow == 'y') {
+				goto START;
+			}
+		}
+	}
+
+	//return 0;
 }
 
 char checkState(int matrix[4][4])
