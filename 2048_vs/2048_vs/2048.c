@@ -26,6 +26,7 @@ int main(void)
 	bool add = true;
 	bool playDin = true;
 	char playerInput;
+	int trickORtreat;
 START:
 	gameContinue = true;
 	add = true;
@@ -67,6 +68,10 @@ START:
 						break;
 					}
 					break; // Break out of the while loop after processing key input
+				}
+				else {
+					playerInput = 't';
+					break;
 				}
 			}
 		}
@@ -117,6 +122,47 @@ START:
 				if (count == 3) {
 					break;
 				}
+			}
+		}
+		else if (playerInput == 't')
+		{
+			srand(time(0));
+			trickORtreat = rand() % 10;
+			if (trickORtreat>6) {
+				int max = board[0][0];
+				int maxI = 0, maxJ = 0;
+				for (int i = 0; i < 4; i++) {
+					for (int j = 0; j < 4; j++) {
+						if (board[i][j] > max) {
+							max = board[i][j];
+							maxI = i;
+							maxJ = j;
+						}
+					}
+				}
+				board[maxI][maxJ] *= 2;
+				colorPrint("T", 240, 30, 30);
+				colorPrint("R", 240, 130, 30);
+				colorPrint("E", 240, 240, 30);
+				colorPrint("A", 30, 240, 30);
+				colorPrint("T", 240, 30, 240);
+				Sleep(1000);
+			}
+			else {
+				int max = board[0][0];
+				int maxI = 0, maxJ = 0;
+				for (int i = 0; i < 4; i++) {
+					for (int j = 0; j < 4; j++) {
+						if (board[i][j] > max) {
+							max = board[i][j];
+							maxI = i;
+							maxJ = j;
+						}
+					}
+				}
+				board[maxI][maxJ] = 0;
+				printf("Trick");
+				Sleep(1000);
 			}
 		}
 		else
