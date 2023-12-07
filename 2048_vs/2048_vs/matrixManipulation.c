@@ -102,44 +102,42 @@ void moveDown(int matrix[4][4]){
         }
     }
 }
-void addNumber(int matrix[4][4],int *x,int *y){
-    int maxNumber=2;
+void addNumber(int matrix[4][4], int *x, int *y)
+{
+    int maxNumber = 2;
     srand(time(NULL));
-    bool keepFinding=true;
-    //int countZero=0;
-    for(int i=0;i<4;i++){
-        for(int j=0;j<4;j++){
-            /*if(matrix[i][j]==0){
-                countZero++;
-            }*/
-            if (matrix[i][j] >= maxNumber) {
+    bool keepFinding = true;
+    for (int i = 0; i < 4; i++)
+    {
+        for (int j = 0; j < 4; j++)
+        {
+            if (matrix[i][j] >= maxNumber)
+            {
                 maxNumber = matrix[i][j];
             }
         }
     }
- /*   if(countZero==0){
-        keepFinding=false;
-    }*/
-    while(keepFinding){
-        int i=rand()%4;
-        int j=rand()%4;
-        int two_four=rand()%10;
+    while (keepFinding)
+    {
+        int i = rand() % 4, j = rand() % 4, two_four = rand() % 10;
         int maxlog = log2(maxNumber) - 1;
-        if(matrix[i][j]==0){
-            if(two_four<=9-(maxlog/2)){
-                matrix[i][j]=2;
+        if (matrix[i][j] == 0)
+        {
+            if (two_four <= 9 - (maxlog / 2))
+            {
+                matrix[i][j] = 2;
                 *x = i;
                 *y = j;
-                keepFinding=false;
+                keepFinding = false;
             }
-            else{
-                matrix[i][j]=4;
+            else
+            {
+                matrix[i][j] = 4;
                 *x = i;
                 *y = j;
-                keepFinding=false;
+                keepFinding = false;
             }
         }
-
     }
     return;
 }
