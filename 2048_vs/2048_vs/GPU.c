@@ -179,7 +179,16 @@ void display(int matrix[4][4], int x, int y, bool addnumber)
 					float redStep=(float)cNumbers[Number].red/50;
 					float greenStep=(float)cNumbers[Number].green / 50;
 					float blueStep=(float)cNumbers[Number].blue / 50;
-					for (float r = 0.0, g = 0.0, b = 0.0;r < cNumbers[Number].red && g < cNumbers[Number].green && b < cNumbers[Number].blue;r+=redStep, g+=greenStep, b+=blueStep) {
+					for (float r = 0.0,
+							   g = 0.0,
+							   b = 0.0;
+							   r < cNumbers[Number].red &&
+							   g < cNumbers[Number].green &&
+							   b < cNumbers[Number].blue;
+							   r += redStep,
+							   g += greenStep,
+							   b += blueStep)
+					{
 						for (int i = 0; i < 7; i++)
 						{
 							goto_xy(3 + 21 * h, (i + 1) + 8 * v);
@@ -188,9 +197,10 @@ void display(int matrix[4][4], int x, int y, bool addnumber)
 							colorPrint(string, ceil(r), ceil(g), ceil(b));
 						}
 						Sleep(1);
-                        if(_kbhit()){
-                            break;
-                        }
+						if (_kbhit())
+						{
+							break;
+						}
 					}
 					for (int i = 0; i < 7; i++)
 					{
