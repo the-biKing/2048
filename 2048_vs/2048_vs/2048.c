@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <time.h>
-#include<conio.h>
-#include<Windows.h>
-#include<mmsystem.h>
+#include <conio.h>
+#include <Windows.h>
+#include <mmsystem.h>
 #include "matrixManipulation.h"
 #include "GPU.h"
-#pragma comment(lib,"winmm.lib")
+#pragma comment(lib, "winmm.lib")
 char checkState(int matrix[4][4]);
-void colorPrint(const char* text, int red, int green, int blue);
+void colorPrint(const char *text, int red, int green, int blue);
 void goto_xy(int x, int y);
 
 extern int merge;
@@ -21,7 +21,7 @@ int main(void)
 	int maxNumber = 2;
 	int horizontalNew, verticleNew;
 	int board[4][4];
-	int count = 0,score=0;
+	int count = 0, score = 0;
 	bool gameContinue = true;
 	bool add = true;
 	bool playDin = true;
@@ -41,17 +41,21 @@ START:
 			board[i][j] = 0;
 		}
 	}
-	addNumber(board,&horizontalNew,&verticleNew);
+	addNumber(board, &horizontalNew, &verticleNew);
 	while (gameContinue)
 	{
 		system("cls");
-		display(board,horizontalNew,verticleNew,add);
-		while (1) {
-			if (_kbhit()) {
+		display(board, horizontalNew, verticleNew, add);
+		while (1)
+		{
+			if (_kbhit())
+			{
 				int key = _getch(); // Get the key code
-				if (key == 224) { // Check for arrow keys
+				if (key == 224)
+				{					// Check for arrow keys
 					key = _getch(); // Second _getch() to capture arrow key codes
-					switch (key) {
+					switch (key)
+					{
 					case 72: // Up arrow
 						playerInput = 'w';
 						break;
@@ -69,7 +73,8 @@ START:
 					}
 					break; // Break out of the while loop after processing key input
 				}
-				else {
+				else
+				{
 					playerInput = 't';
 					break;
 				}
@@ -80,10 +85,12 @@ START:
 		{
 			count = 0;
 			merge = 0;
-			while (merge == 0) {
+			while (merge == 0)
+			{
 				moveUp(board);
 				count++;
-				if (count == 3) {
+				if (count == 3)
+				{
 					break;
 				}
 			}
@@ -92,10 +99,12 @@ START:
 		{
 			count = 0;
 			merge = 0;
-			while (merge == 0) {
+			while (merge == 0)
+			{
 				moveLeft(board);
 				count++;
-				if (count == 3) {
+				if (count == 3)
+				{
 					break;
 				}
 			}
@@ -104,10 +113,12 @@ START:
 		{
 			count = 0;
 			merge = 0;
-			while (merge == 0) {
+			while (merge == 0)
+			{
 				moveDown(board);
 				count++;
-				if (count == 3) {
+				if (count == 3)
+				{
 					break;
 				}
 			}
@@ -116,10 +127,12 @@ START:
 		{
 			count = 0;
 			merge = 0;
-			while (merge == 0) {
+			while (merge == 0)
+			{
 				moveRight(board);
 				count++;
-				if (count == 3) {
+				if (count == 3)
+				{
 					break;
 				}
 			}
@@ -128,12 +141,16 @@ START:
 		{
 			srand(time(0));
 			trickORtreat = rand() % 10;
-			if (trickORtreat>6) {
+			if (trickORtreat > 6)
+			{
 				int max = board[0][0];
 				int maxI = 0, maxJ = 0;
-				for (int i = 0; i < 4; i++) {
-					for (int j = 0; j < 4; j++) {
-						if (board[i][j] > max) {
+				for (int i = 0; i < 4; i++)
+				{
+					for (int j = 0; j < 4; j++)
+					{
+						if (board[i][j] > max)
+						{
 							max = board[i][j];
 							maxI = i;
 							maxJ = j;
@@ -148,12 +165,16 @@ START:
 				colorPrint("T", 240, 30, 240);
 				Sleep(1000);
 			}
-			else {
+			else
+			{
 				int max = board[0][0];
 				int maxI = 0, maxJ = 0;
-				for (int i = 0; i < 4; i++) {
-					for (int j = 0; j < 4; j++) {
-						if (board[i][j] > max) {
+				for (int i = 0; i < 4; i++)
+				{
+					for (int j = 0; j < 4; j++)
+					{
+						if (board[i][j] > max)
+						{
 							max = board[i][j];
 							maxI = i;
 							maxJ = j;
@@ -169,26 +190,31 @@ START:
 		{
 			printf("Invalid input");
 		}
-		if (movespace != 0) {
-			for (int i = 0;i < 4;i++) {
-				for (int j = 0;j < 4;j++) {
-					if (board[i][j] > maxNumber) {
+		if (movespace != 0)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				for (int j = 0; j < 4; j++)
+				{
+					if (board[i][j] > maxNumber)
+					{
 						maxNumber = board[i][j];
 						PlaySound(TEXT("levelUp.wav"), NULL, SND_FILENAME | SND_ASYNC);
 						playDin = false;
 					}
-					
 				}
 			}
-			if (playDin&&merge>0) {
+			if (playDin && merge > 0)
+			{
 				PlaySound(TEXT("din.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			}
 			playDin = true;
-			
-			addNumber(board,&horizontalNew,&verticleNew);
+
+			addNumber(board, &horizontalNew, &verticleNew);
 			add = true;
 		}
-		else {
+		else
+		{
 			PlaySound(TEXT("accessDenied.wav"), NULL, SND_FILENAME | SND_ASYNC);
 			int j = 0;
 			while (j <= 84)
@@ -196,7 +222,7 @@ START:
 				for (int i = 0; i < 32; i++)
 				{
 					goto_xy(j, i);
-					colorPrint("|",240,30,30);
+					colorPrint("|", 240, 30, 30);
 				}
 				j = j + 21;
 			}
@@ -267,7 +293,7 @@ START:
 			Sleep(200);
 			add = false;
 		}
-		state=checkState(board);
+		state = checkState(board);
 		if (state != 'c')
 		{
 			gameContinue = false;
@@ -275,43 +301,50 @@ START:
 	}
 	if (state == 'w')
 	{
-		display(board,horizontalNew,verticleNew,false);
+		display(board, horizontalNew, verticleNew, false);
 		printf("win");
 	}
 	if (state == 'l')
 	{
-		
-		display(board,horizontalNew,verticleNew,false);
+
+		display(board, horizontalNew, verticleNew, false);
 		printf("lose\n");
-		for(int i=0;i<4;i++){
-			for(int j=0;j<4;j++){
+		for (int i = 0; i < 4; i++)
+		{
+			for (int j = 0; j < 4; j++)
+			{
 				score = score + board[i][j];
 			}
 		}
-		printf("your score: %d\n",score);
+		printf("your score: %d\n", score);
 	}
 
-
 	printf("Press any key to continue...\n");
-	while (!_kbhit()) {}
+	while (!_kbhit())
+	{
+	}
 	char keyNow;
 	system("cls");
 	printf("Press 'y' to play again or 'q' to quit\n");
 
 	// Input handling
-	while (1) {
-		if (_kbhit()) {
+	while (1)
+	{
+		if (_kbhit())
+		{
 			keyNow = _getch();
-			if (keyNow == 'q') {
+			if (keyNow == 'q')
+			{
 				exit(0);
 			}
-			else if (keyNow == 'y') {
+			else if (keyNow == 'y')
+			{
 				goto START;
 			}
 		}
 	}
 
-	//return 0;
+	// return 0;
 }
 
 char checkState(int matrix[4][4])
@@ -352,12 +385,12 @@ char checkState(int matrix[4][4])
 	}
 	return 'l'; // l=lose
 }
-void colorPrint(const char* text, int red, int green, int blue)
+void colorPrint(const char *text, int red, int green, int blue)
 {
 	printf("\x1b[38;2;%d;%d;%dm%s\x1b[0m", red, green, blue, text);
 }
 void goto_xy(int x, int y)
 {
-	COORD pos = { x, y };
+	COORD pos = {x, y};
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
