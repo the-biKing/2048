@@ -334,9 +334,9 @@ char checkState(int matrix[4][4])
 		}
 	}
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 3; i++)
 	{
-		for (j = 0; j < 2; j++)
+		for (j = 0; j < 3; j++)
 		{
 			if (matrix[i][j] == matrix[i][j + 1] || matrix[i][j] == matrix[i + 1][j])
 			{
@@ -344,6 +344,11 @@ char checkState(int matrix[4][4])
 				break;
 			}
 		}
+	}
+	if (matrix[3][3] == matrix[2][3] || matrix[3][3] == matrix[3][2])
+	{
+		return 'c'; // c=game continue
+		break;
 	}
 	return 'l'; // l=lose
 }
