@@ -381,7 +381,6 @@ char checkState(int matrix[4][4])
 	if (matrix[3][3] == matrix[2][3] || matrix[3][3] == matrix[3][2])
 	{
 		return 'c'; // c=game continue
-		break;
 	}
 	return 'l'; // l=lose
 }
