@@ -363,8 +363,7 @@ char checkState(int matrix[4][4])
 				return 'c'; // c = game continue
 				break;
 			}
-			else if ((j <3 && matrix[i][j] == matrix[i][j + 1]) || 
-					(i < 3 && matrix[i][j] == matrix[i + 1][j]) ||)
+			else if ((j < 3 && matrix[i][j] == matrix[i][j + 1]) || (i < 3 && matrix[i][j] == matrix[i + 1][j]))
 			{
 				return 'c'; // c=game continue
 				break;
