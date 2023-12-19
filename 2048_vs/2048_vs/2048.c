@@ -306,7 +306,6 @@ START:
 	}
 	if (state == 'l')
 	{
-
 		display(board, horizontalNew, verticleNew, false);
 		printf("lose\n");
 		for (int i = 0; i < 4; i++)
@@ -364,23 +363,13 @@ char checkState(int matrix[4][4])
 				return 'c'; // c = game continue
 				break;
 			}
-		}
-	}
-
-	for (i = 0; i < 3; i++)
-	{
-		for (j = 0; j < 3; j++)
-		{
-			if (matrix[i][j] == matrix[i][j + 1] || matrix[i][j] == matrix[i + 1][j])
+			else if ((j <3 && matrix[i][j] == matrix[i][j + 1]) || 
+					(i < 3 && matrix[i][j] == matrix[i + 1][j]) ||)
 			{
 				return 'c'; // c=game continue
 				break;
 			}
 		}
-	}
-	if (matrix[3][3] == matrix[2][3] || matrix[3][3] == matrix[3][2])
-	{
-		return 'c'; // c=game continue
 	}
 	return 'l'; // l=lose
 }
